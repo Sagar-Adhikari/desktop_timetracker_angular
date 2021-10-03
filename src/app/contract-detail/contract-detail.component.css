@@ -1,0 +1,77 @@
+.main {
+    width: 100%;
+    padding: 12px;
+}
+
+.contract-item-title {
+    margin: 4.0px;
+    color: #4a154b;
+}
+
+.progress-time {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    /* identical to box height */
+    align-items: center;
+    letter-spacing: 0.005em;
+    color: #27AB6B;
+}
+
+.screenshot-box {
+    width: 245px;
+    height: 120px;
+    background: #C4C4C4;
+}
+
+.img-screenshot {
+    width: 245px;
+    height: 120px;
+}
+
+.start-btn {
+    width: 95px;
+    height: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.h2-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.h3-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.start-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #693B6A;
+}
+
+.icon-class {
+    height: 16px;
+    padding: 2px;
+    cursor: pointer;
+}

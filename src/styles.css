@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.invalid-feedback {
+    color: tomato;
+}
+
+::ng-deep snack-bar-container.snack-bar-class {
+    background: #4A154B;
+}
+
+p {
+    margin: 2px;
+}
+
+.input-decoration {
+    padding: 8px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.background-success {
+    background: blue;
+}
+
+.background-fail {
+    background: red;
+}

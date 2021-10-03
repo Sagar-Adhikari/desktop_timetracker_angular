@@ -1,0 +1,29 @@
+<app-prog-indicator fxLayout="column" fxLayoutAlign="center center" *ngIf="loading" class="progress-indicator"></app-prog-indicator>
+
+<mat-card fxLayout="column" fxLayoutAlign="space-between start" *ngIf="!loading" fxLayoutGap="8px">
+    <div id="searchDiv">
+        <input type="text" class="input-decoration" placeholder="Search Contracts"  />
+    </div>
+    <div id="mainDiv">
+        <div id="contractsDiv">
+            <div fxLayout="row">
+                <h2 class="contract-title">Contracts</h2>
+            </div>
+            <mat-divider></mat-divider>
+            <div *ngIf="contracts">
+                <div *ngFor="let contract of contracts" fxLayout="column" (click)="contractClick(contract)" class="contract-div">
+                    <h4 class="contract-item-title">{{contract.title}}</h4>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="contract-item-client" fxLayoutGap="8px">
+                        <p>{{contract.client.first_name}}</p>
+                        <p>Started on: {{contract.start_date}}</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+            <div *ngIf="!contracts">
+                <h2>You have no open contracts at this moment.</h2>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-paginator #paginator [length]="dataLength" [pageSize]="perpage" (page) =" handlePage($event)" ></mat-paginator>

@@ -1,0 +1,46 @@
+<app-prog-indicator fxLayout="column" fxLayoutAlign="center center" *ngIf="loading" class="progress-indicator"></app-prog-indicator>
+
+<mat-card class="main" fxLayout="column" fxLayoutAlign="space-between start" *ngIf="!loading" fxLayoutGap="8px">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="12px">
+        <div fxLayout="column">
+            <img alt="back btn" class="icon-class" src="assets/icons/back_icon.PNG" (click)="backClicked()" />
+        </div>
+        <div fxLayout="column">
+            <h3 class="contract-item-title">{{contractView.title}}</h3>
+            <p>{{contractView.client}}</p>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+        <p class="h2-text">Current Session</p>
+        <div *ngIf="!sessionInProgress" class="start-btn" (click)="startSession()" fxLayout="row" fxLayoutAlign="space-around center">
+            <img alt="start icon btn" class="icon-class" src="assets/icons/right_arrow_icon.PNG" />
+            <p class="start-text">Start</p>
+        </div>
+        <div *ngIf="sessionInProgress" class="start-btn" (click)="stopSession()" fxLayout="row" fxLayoutAlign="space-around center">
+            <p class="start-text">Stop</p>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="36px">
+        <p class="h3-text">Time</p>
+        <p class="progress-time">{{getProgressTime()}}</p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+        <p class="h3-text">Memo:</p>
+        <img alt="edit btn" class="icon-class" src="assets/icons/edit_icon.PNG" (click)="editBtnClicked()" />
+    </div>
+
+    <form>
+        <mat-form-field appearance="outline">
+            <input name="memo_text" [(ngModel)]="memoText" matInput [disabled]="(sessionInProgress && !editingMemo)" />
+        </mat-form-field>
+    </form>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="66px">
+        <p class="h2-text">Today</p>
+        <p class="progress-time">{{totalHourToday}} : {{totalMinuteToday}} hrs</p>
+    </div>
+    <div class="screenshot-box">
+        <img *ngIf="screenshot_path" [src]="screenshot_path" alt="screenshot" class="img-screenshot">
+    </div>
+</mat-card>

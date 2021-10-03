@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" *ngIf="!loading" style="height: 520px; padding: 20px">
+
+    <img alt="app logo" src="assets/logo-black.png" height="100px" width="100px" />
+
+    <p *ngIf=" errorMsg" class="invalid-feedback">{{errorMsg}}</p>
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()" fxLayout="column">
+        <mat-form-field appearance="outline">
+            <mat-label>Email:</mat-label>
+            <input matInput type="email" class="form-control" formControlName="email">
+            <div *ngIf="f.email.value && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors">Invalid Email</div>
+            </div>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password:</mat-label>
+            <input matInput type="password" class="form-control" formControlName="password">
+            <div *ngIf="f.password.value && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+    <p>
+        By using Remote Nepals's services, you agree to our <a href="#">Terms Of Use</a>.
+    </p>
+</div>
+<app-prog-indicator fxLayout="column" fxLayoutAlign="center center" *ngIf="loading" class="progress-indicator"></app-prog-indicator>

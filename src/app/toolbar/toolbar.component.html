@@ -1,0 +1,32 @@
+<!-- <mat-toolbar class="toolbar-style">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-button (click)="onLogoClick()">
+            <span class="menu-button">Remote Nepal</span>
+        </button>
+
+        <div fxLayout="row">
+            <div *ngIf="!isLoggedOut">
+                <button mat-button [matMenuTriggerFor]="menu">
+                <span class="user-name">{{ user.first_name }}</span>
+            </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="aboutClicked()">
+                        <span class="menu-button">About</span>
+                    </button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item (click)="logoutClicked()">
+                        <span class="menu-button">Logout</span>
+                    </button>
+                </mat-menu>
+            </div>
+            <button *ngIf="isLoggedOut" mat-button (click)="loginClicked()">
+                <span class="menu-button">Login</span>
+             </button>
+            <button mat-button (click)="closeClicked($event)">
+                <span class="menu-button">Close</span>
+             </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+.contract-title {
+    color: #4a154b;
+}
+
+.contract-item-title {
+    margin: 4.0px;
+    color: #4a154b;
+}
+
+.contract-item-client {
+    margin: 2.0px;
+    color: grey;
+}
+
+.contract-div {
+    cursor: pointer;
+}
